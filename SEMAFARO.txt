@@ -1,0 +1,123 @@
+/*Autor: Lucas Rodrigues
+
+Nome Programa: Pisca-Pisca
+
+Descrição: Este é o meu primeiro codígo
+em arduino. Pisca o pino 13
+
+Data:19/02/2025
+*/
+#define ledvermelho 13
+#define ledamarelo 12
+#define ledverde 11
+#define ledvermelho2 10
+#define ledamarelo2 9
+#define ledverde2 8
+#define ledverde3 6
+#define ledvermelho3 7
+#define ledvermelho4 5
+#define ledverde4 4
+
+
+void setup()
+{
+  pinMode(ledvermelho, OUTPUT);
+  pinMode(ledamarelo, OUTPUT);
+  pinMode(ledverde, OUTPUT);
+   pinMode(ledvermelho2, OUTPUT);
+   pinMode(ledamarelo2, OUTPUT);
+   pinMode(ledverde2, OUTPUT);
+  pinMode(ledvermelho3, OUTPUT);
+  pinMode(ledverde3, OUTPUT);
+   pinMode(ledvermelho4, OUTPUT);
+  pinMode(ledverde4, OUTPUT);
+  
+}
+
+void loop()
+
+{
+  digitalWrite(ledvermelho4, HIGH);
+ 
+  digitalWrite(ledverde3, HIGH);
+  
+  digitalWrite(ledvermelho2, HIGH);
+  
+  digitalWrite(ledverde, HIGH);
+  
+  delay(3000);
+  
+  digitalWrite(ledverde, LOW);
+  
+  digitalWrite(ledamarelo, HIGH);
+  
+  delay(2000);
+  
+   digitalWrite(ledamarelo, LOW);
+  digitalWrite(ledvermelho4, LOW);
+  digitalWrite(ledvermelho, HIGH);
+  digitalWrite(ledverde4, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledverde4, LOW);
+  
+  delay(550);
+  
+  digitalWrite(ledverde4, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledverde4, LOW);
+  
+ delay(1000);
+  digitalWrite(ledvermelho, HIGH);
+  digitalWrite(ledvermelho4, LOW);
+  
+ 
+  
+    digitalWrite(ledvermelho, HIGH);
+  digitalWrite(ledvermelho4, HIGH);
+  
+  
+  digitalWrite(ledverde3, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledverde3, LOW);
+  
+  delay(550);
+  
+  digitalWrite(ledverde3, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledverde3, LOW);
+  
+ delay(1000);
+  digitalWrite(ledvermelho4, HIGH);
+  
+   digitalWrite(ledvermelho2,LOW);
+  
+  digitalWrite(ledvermelho3, HIGH);
+  
+  digitalWrite(ledverde2 , HIGH);
+  
+  delay(3000);
+  
+  digitalWrite(ledverde2,LOW);
+  
+  digitalWrite(ledamarelo2, HIGH);
+  
+  delay(2000);
+  
+  digitalWrite(ledamarelo2, LOW);
+  
+  digitalWrite(ledvermelho3, LOW);
+  
+  digitalWrite(ledvermelho, LOW);
+
+     
+
+
+}
