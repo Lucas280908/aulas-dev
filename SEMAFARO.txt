@@ -52,32 +52,34 @@ void loop()
   digitalWrite(ledamarelo, HIGH);
   
   delay(2000);
+      digitalWrite(ledvermelho4, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledvermelho4, LOW);
+  
+  delay(550);
+  
+  digitalWrite(ledvermelho4, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledvermelho4, LOW);
+  
+ delay(1000);
+   digitalWrite(ledvermelho4, HIGH);
+  
+  delay(550);
+  
+  digitalWrite(ledvermelho4, LOW);
+  
+ delay(1000);
   
    digitalWrite(ledamarelo, LOW);
   digitalWrite(ledvermelho4, LOW);
   digitalWrite(ledvermelho, HIGH);
-  digitalWrite(ledverde4, HIGH);
-  
-  delay(550);
-  
-  digitalWrite(ledverde4, LOW);
-  
-  delay(550);
   
   digitalWrite(ledverde4, HIGH);
-  
-  delay(550);
-  
-  digitalWrite(ledverde4, LOW);
-  
- delay(1000);
-  digitalWrite(ledvermelho, HIGH);
-  digitalWrite(ledvermelho4, LOW);
-  
- 
-  
-    digitalWrite(ledvermelho, HIGH);
-  digitalWrite(ledvermelho4, HIGH);
   
   
   digitalWrite(ledverde3, HIGH);
@@ -95,7 +97,7 @@ void loop()
   digitalWrite(ledverde3, LOW);
   
  delay(1000);
-  digitalWrite(ledvermelho4, HIGH);
+  
   
    digitalWrite(ledvermelho2,LOW);
   
@@ -116,8 +118,6 @@ void loop()
   digitalWrite(ledvermelho3, LOW);
   
   digitalWrite(ledvermelho, LOW);
-
-     
-
+  digitalWrite(ledverde4, LOW);
 
 }
