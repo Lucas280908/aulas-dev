@@ -1,0 +1,283 @@
+
+
+
+
+
+
+
+
+
+// C++ code
+//
+
+int temperatura = 31;
+float bateria = 19;
+#define ledvermelho 13
+#define ledamarelo 12
+
+
+
+
+
+
+
+void setup()
+{ pinMode(ledamarelo, OUTPUT);
+  pinMode(ledvermelho, OUTPUT);
+ 
+  
+  
+  
+  
+  
+  
+}
+void loop()
+  
+{
+  
+  bool tempAlta = (temperatura > 30);
+  bool bateriaAquecida = (bateria <= 80 && bateria >= 20);
+
+  if (tempAlta || bateriaAquecida) 
+  // Se pelo menos uma das condições for verdadeira
+  {
+    if (tempAlta) digitalWrite(ledvermelho, HIGH);
+    if (bateriaAquecida) digitalWrite(ledamarelo, HIGH);
+
+    delay(500);
+
+    if (tempAlta) digitalWrite(ledvermelho, LOW);
+    if (bateriaAquecida) digitalWrite(ledamarelo, LOW);
+
+    delay(500);
+  }
+  else
+  {
+    // Se nenhuma das condições for verdadeira, ambos os LEDs ficam apagados
+    digitalWrite(ledvermelho, LOW);
+    digitalWrite(ledamarelo, LOW);
+  }
+  
+
+}
+
+
+// C++ code
+//
+
+#define ledcinza 13
+int numero = 435;
+int resultado = 0;
+
+void setup()
+{
+  pinMode(ledcinza, OUTPUT);
+}
+
+void loop()
+{
+  resultado = numero%2;
+    if (resultado ==0)
+  {
+   digitalWrite(ledcinza, HIGH); 
+    }
+}
+
+
+
+
+
+#define led 13
+
+void setup ()
+{
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+  int valor = 1000;
+  int intervalo = map (valor, 0, 1023, 0, 100);
+  int resultado = constrain (intervalo, 20, 80);
+//constrain serve pra caso o numero passe dos limites
+//estabelecidos, o pc arredonde para o que voce colocou
+    if(intervalo >80 or intervalo <20)
+    {
+digitalWrite(led, HIGH);
+ Serial.print(" Valor original: ");
+    Serial.print(intervalo);
+  Serial.print(" foi reajusado para: ");
+  Serial.println(resultado);
+  }
+}
+  
+  void loop()
+  {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+int numero= -21;
+void setup()
+{
+  Serial.begin(9600);
+  if (numero >=0)
+  {
+   Serial.print("Seu numero e positivo");
+  }
+  else
+  {
+    Serial.print("Seu numero e negativo");
+  }
+}
+
+void loop()
+{
+
+
+}
+
+
+
+float salario= 945.12;
+float dezporcento= 1.1;
+float novosalario= salario * dezporcento;
+
+void setup()
+{
+  Serial.begin(9600);
+  if( salario <1000)
+    
+  {
+    
+    Serial.println("Nome: Robson ");
+    Serial.println("Cargo: auxiliar admninstrativo ");
+    Serial.println("Salario Ajustado: ");
+    Serial.println(novosalario);
+  }
+    else
+    {
+    Serial.print("Nome: Robson ");
+    Serial.print("Cargo: auxiliar admninstrativo ");
+    Serial.print("Salario: ");
+    Serial.print(salario);
+    }
+  }
+
+
+void loop()
+{
+  
+}
+
+
+
+
+
+
+float salario= 659;
+float aumento= 1.3;
+float novosalario= salario*aumento;
+void setup()
+{
+  Serial.begin(9600);
+ if (salario <500)
+ {
+  Serial.print("Seu salario de ");
+    Serial.print(salario );
+    Serial.print(" Foi reajustado para ");
+    Serial.print(novosalario);
+ }
+  else
+  {
+   Serial.print("Seu salario de ");
+    Serial.print(salario);
+    Serial.print(" nao recebera aumento, pois e superior a 500");
+  }
+}
+
+void loop()
+{
+
+}
+
+
+
+float valor1= 245;
+  float valor2= 102;
+
+
+void setup ()
+{
+  Serial.begin(9600);
+if (valor1 > valor2)
+{
+ Serial.print(valor1);
+}
+  
+  else
+  {
+   Serial.print(valor2); 
+  }
+}
+
+
+void loop()
+{
+  
+}
+*/
+#define ledverde 11
+#define ledamarelo 12
+#define ledvermelho 13
+float nota1=5.2;
+  float nota2=5.0;
+  float nota3=5.0;
+  float nota4=4.8;
+  float medianotas= (nota1+nota2+nota3+nota4)/4;
+void setup ()
+{
+  pinMode(ledverde, OUTPUT);
+  pinMode(ledamarelo, OUTPUT);
+  pinMode(ledvermelho, OUTPUT);
+  Serial.begin(9600);
+ if (medianotas >=7)
+ {
+  Serial.print("APROVADO");
+   
+   
+ }
+  
+  else if (medianotas <7 && medianotas >5 )
+ {
+    Serial.print("RECUPERACAO");
+    
+ }
+  
+  else
+  {
+   Serial.print("REPROVADO"); 
+    
+  }
+  
+}
+
+
+void loop()
+{
+  
+}
