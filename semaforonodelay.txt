@@ -1,0 +1,91 @@
+
+#define ledvermelho 13
+#define ledverde 10
+#define ledamarelo 5
+
+
+char fasesemaforo=0;
+unsigned long tempoms;
+unsigned long tempoinicial=0;
+
+  
+
+void setup()
+{
+  pinMode(ledvermelho, OUTPUT);
+  pinMode(ledverde, OUTPUT);
+  pinMode(ledamarelo, OUTPUT);
+  Serial.begin(9600);
+ 
+
+  
+}
+
+void loop()
+{
+tempoms=millis();
+  Serial.println(tempoms);
+  
+  
+  if(fasesemaforo ==0)
+  {
+   digitalWrite(ledverde, HIGH);
+    digitalWrite(ledamarelo,LOW);
+    digitalWrite(ledvermelho,LOW);
+    
+    
+    if(tempoms- tempoinicial >3000)
+    {
+     tempoinicial = tempoms;
+        fasesemaforo=1;
+    }
+  }
+  
+  else if(fasesemaforo == 1)
+{
+    digitalWrite(ledverde, LOW); 
+    digitalWrite(ledamarelo, HIGH);
+    digitalWrite(ledvermelho, LOW);
+            
+ if (tempoms-tempoinicial >2000)
+ {
+     tempoinicial = tempoms;
+     fasesemaforo=2;
+ }
+  }
+            
+  else if(fasesemaforo==2)
+  {
+      
+     digitalWrite(ledverde, LOW); 
+    digitalWrite(ledamarelo, LOW);
+    digitalWrite(ledvermelho, HIGH);
+                 
+                 
+    if(tempoms-tempoinicial >5000)
+  {
+    
+    tempoinicial = tempoms;
+    fasesemaforo=0;
+    
+    
+   }
+  }              
+}
+            
+            
+
+    
+            
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
