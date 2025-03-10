@@ -1,0 +1,33 @@
+
+
+
+#define botao 13
+
+int vezes;
+
+
+ 
+void setup()
+{
+  pinMode(botao, INPUT);
+  Serial.begin(9600);
+    
+}
+
+void loop()
+{
+  static bool statusantes;
+  bool statusbotao =digitalRead(botao);
+  
+  if(statusantes ==1 && statusbotao==0)
+  {
+vezes=vezes+1;
+  Serial.println(vezes);
+  }
+  
+    statusantes=statusbotao;
+}
+  
+  
+  
+  
