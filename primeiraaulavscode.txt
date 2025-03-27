@@ -1,0 +1,96 @@
+
+#include <Arduino.h>
+#define led 21
+#define botao 23
+#include <LiquidCrystal_I2C.h>
+
+// ! instancia de Objetos  
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+  pinMode(botao, INPUT);
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+  lcd.print("OLA MUNDO");
+}
+
+void loop()
+{
+ /*
+ leituraBotao = digitalRead(botao);
+  static int leituraAnterior;
+  static int vezes;
+  static bool estadoAtualBotao;
+  int leituraBotao;
+  */
+  static bool estadoLed = 0;
+
+  bool estadoAtualBotao = digitalRead(botao);
+  static bool estadoAnteriorBotao = 1;
+  static bool ultimaAcao=1;
+  static unsigned long tempoAnteriorDebounce= 0;
+  unsigned long tempAtual = millis();
+  unsigned long tempDebounce= 50;
+  static int contagem = 0;
+  
+
+
+
+//! INICIA O TRATAMENTO DE RUIDO DO BOTAO
+  if (estadoAtualBotao != estadoAnteriorBotao)
+  {
+    //marca quando uma mudanca de estado acontece
+ tempoAnteriorDebounce = tempAtual;
+  }
+  //verfica se a mudanca de estado esta estavel a bastante tempo
+  if((tempAtual - tempoAnteriorDebounce) > tempDebounce)
+{
+  //houve uma alteracao proposital do estado do botao?
+ if(estadoAtualBotao != ultimaAcao ) 
+ {
+  
+  ultimaAcao = estadoAtualBotao;
+ 
+  if(!estadoAtualBotao)
+  {
+    //o Botao foi pressionado
+    contagem++;
+    Serial.println(contagem);
+    estadoLed = !estadoLed;
+    digitalWrite(led, estadoLed);
+    
+
+  }
+  else 
+  {
+    //o botao foi solto
+  }
+ }
+}
+
+ estadoAnteriorBotao = estadoAtualBotao;
+
+
+}
+
+
+
+
+
+//!  LICAOZINHA BOTAO LIGANDO LED E CONTANDO QUANTAS VEZES FOI APERTADO
+  /* if (leituraAnterior == 1 && leituraBotao == 0)
+  {
+    estadoLed = !estadoLed;
+    digitalWrite(led, estadoLed);
+    delay(800);
+    vezes++;
+    Serial.println(vezes);
+   
+  }
+
+  leituraAnterior = leituraBotao;
+  */
+
